@@ -2,7 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 require('dotenv').config();
 const dbConfig = require('./config/dbConfig');
 const PORT = process.env.PORT || 9070;
